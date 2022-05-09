@@ -35,4 +35,10 @@ const Bike = connection.define(
   }
 );
 
+const initTable = async () => {
+  await Bike.sync();
+};
+
+initTable();
+
 module.exports = Bike;
