@@ -150,7 +150,7 @@ section#cadastro form label {
 
 section#cadastro form button {
   padding: 0.8rem;
-  width: 20%;
+  width: 50%;
   display: flex;
   justify-content: center;
   margin: 0 auto;
