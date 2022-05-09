@@ -80,7 +80,7 @@ section#cards div.card {
 
 section#cards div.card a {
   padding: 0.4rem;
-  width: 20%;
+  width: 50%;
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -139,7 +139,7 @@ section#cadastro form input {
   padding: 0.7rem;
   font-size: 1rem;
   outline: none;
-  border: solix 2px rgb(184, 180, 180);
+  border: solid 2px rgb(184, 180, 180);
   margin: 0 1rem 1rem 1rem;
 }
 
