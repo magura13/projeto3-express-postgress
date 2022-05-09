@@ -1,0 +1,27 @@
+<section class="modal-overlay" id="overlay">
+  <div class="modal" id="modal">
+    <div class="modal-header">
+<h3>Update bike</h3>
+<a href="/" id="close-modal-put">X</a>
+    </div>
+
+    <div class="modal-body">
+        <form class="form-modal" action="/update/<%= bikePut.id %>" method="post">
+            <label for="marca">Brand:</label>
+            <input required type="text" id="marca" name="marca" value="<%= bikePut.marca %>"/>
+  
+            <label for="modelo">Model:</label>
+            <input required type="text" name="modelo" id="modelo" value="<%= bikePut.modelo %>"/>
+  
+            <label for="tipo">Type:</label>
+            <input required type="text" name="tipo" id="tipo" value="<%= bikePut.tipo %>"/>
+  
+            <label for="imagem">Image Link:</label>
+            <input required type="url" name="imagem" id="imagem" value="<%= bikePut.img %>"/>
+  
+            <button id="btnCadastrar" type="submit">Update</button>
+          </form>
+    </div>
+  </div>
+
+</section>

@@ -8,6 +8,7 @@ const routes = require("./src/routes/routes")
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
+app.use(express.json())
 app.use(routes);
 
 const port = process.env.PORT || 3000;

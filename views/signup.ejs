@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <%- include('./components/head') %>
+</head>
+<body>
+  <%- include('./components/nav') %>
+    <section id="cadastro">
+        <h2>Register a new catalog</h2>
+
+        <% if(message!= "") { %>
+          <%- include('./components/alerts') %>
+    <% } %>
+
+        <form action="/create" method="post">
+          <label for="marca">Brand:</label>
+          <input required type="text" id="marca" name="marca" />
+
+          <label for="modelo">Model:</label>
+          <input required type="text" name="modelo" id="modelo" />
+
+          <label for="tipo">Type:</label>
+          <input required type="text" name="tipo" id="tipo" />
+
+          <label for="imagem">Image Link:</label>
+          <input required type="text" name="img" id="imagem" />
+
+          <button id="btnCadastrar" type="submit">Register</button>
+        </form>
+      </section>
+      <%- include('./components/footer') %>
+
+      <script src="/js/script.js"></script>
+</body>
+</html>

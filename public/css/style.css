@@ -6,10 +6,6 @@
   font-family: Roboto, Arial;
 }
 
-body {
-  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9m4UheNYKRdSvz3TyJxJhurxKndA6yoFKewGTgHI0twn1AU8a67UDiWoIkSvusaerjO4&usqp=CAU);
-}
-
 nav {
   list-style: none;
   display: flex;
@@ -22,12 +18,12 @@ nav li {
   color: rgb(255, 255, 255);
 }
 
-nav {
+/* nav {
   background-color: rgb(0, 38, 255);
   position: fixed;
   width: 100%;
   z-index: 9999;
-}
+} */
 
 nav li i {
   font-size: 1.1rem;
@@ -44,7 +40,7 @@ nav li:hover {
 
 nav {
   padding: 1rem;
-  background-color: rgb(209, 125, 125);
+  background-color: #274029;
   display: flex;
 }
 
@@ -90,8 +86,8 @@ section#cards div.card a {
   margin: 0 auto;
   font-size: 1rem;
   background-color: rgba(255, 255, 255, 0.305);
-  border: solid 1px rgb(209, 125, 125);
-  color: rgb(209, 125, 125);
+  border: solid 1px rgb(53, 112, 75);
+  color: rgb(53, 112, 75);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   text-decoration: none;
@@ -99,7 +95,7 @@ section#cards div.card a {
 }
 
 section#cards div.card a:hover {
-  background-color: red;
+  background-color: rgb(60, 196, 94);
   color: #fff;
 }
 
@@ -160,19 +156,19 @@ section#cadastro form button {
   margin: 0 auto;
   font-size: 1rem;
   background-color: #fff;
-  border: solid 1px rgb(209, 125, 125);
-  color: rgb(209, 125, 125);
+  border: solid 1px rgb(53, 112, 75);
+  color: rgb(53, 112, 75);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
 
 section#cadastro form button:hover {
-  background-color: red;
+  background-color: rgb(60, 196, 94);
   color: #fff;
 }
 
 footer {
-  background-color: rgb(209, 125, 125);
+  background-color: #274029;
   padding: 0.5rem;
   text-align: center;
   color: aliceblue;
@@ -190,5 +186,171 @@ footer a {
 }
 
 footer a:hover {
-  color: rgb(228, 169, 92);
+  color: #4f9655;
+}
+
+.modal-overlay {
+  background-color: #00000050;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.modal {
+  margin: 1rem;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  min-height: 300px;
+  background-color: #fff;
+  border-radius: 11px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #274029;
+  padding: 1rem;
+  color: #fff;
+}
+
+.modal-header a#close-modal-put {
+  font-size: 1.4rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.modal-body {
+  padding: 0.5rem 1rem;
+  flex: 1;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.form-modal {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-modal input {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  outline: none;
+  border: solid 2px rgb(88, 86, 86);
+}
+
+.form-modal label {
+  color: rgb(88, 86, 86);
+  padding-top: 0.5rem;
+}
+
+.form-modal button {
+  padding: 0.6rem;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem auto;
+  font-size: 1rem;
+  background-color: rgb(255, 255, 255);
+  color: #4f9655;
+  border: solid 1px #4f9655;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-modal button:hover {
+  background-color: #4f9655;
+  color: rgb(255, 255, 255);
+}
+
+.modal-body p {
+  width: 100%;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+div#btns-del {
+  display: flex;
+  margin: 0 auto;
+}
+
+div#btns-del a {
+  padding: 0.7rem;
+  text-decoration: none;
+  width: 100%;
+  margin: 2rem 1rem 1rem;
+}
+
+div#btns-del a#no {
+  color: rgb(184, 46, 46);
+  border: solid 1px rgb(184, 46, 46);
+  transition: all .3s ease-in-out;
+}
+
+div#btns-del a#no {
+  color: #fff;
+  background-color: rgb(184, 46, 46);
+}
+
+div#btns-del a#yes {
+  color: #4f9655;;
+  border: solid 1px #4f9655;;
+  transition: all .3s ease-in-out;
+}
+
+div#btns-del a#yes {
+  color: #fff;
+  background-color: #4f9655;;
+}
+
+.message {
+  position: absolute;
+  top: 7rem;
+  right: 2rem;
+  z-index: 99999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 25rem;
+  padding: 1.2rem;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.message-danger {
+  background-color: #ffbac6;
+  color: #b4001e;
+}
+
+.message-success {
+  background-color: #c0ffba;
+  color: #007a0a;
+}
+
+.message-info {
+  background-color: #babfff;
+  color: #0003b4;
+}
+
+.message-warning {
+  background-color: #fffaba;
+  color: #b48400;
+}
+
+.message i {
+  cursor: pointer;
+  font-size: 1.7rem;
 }

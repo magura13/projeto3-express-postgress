@@ -1,108 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Pokedéx</title>
+   <%- include('./components/head') %>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><h1>Pokedex</h1></li>
-        <li><a href="#cadastro">Register</a></li>
-        <li><a href="#cards">Pokemons</a></li>
-      </ul>
-    </nav>
+   
+    <%- include('./components/nav') %>
 
     <main>
-      <section id="cadastro">
-        <% if (catalog == undefined) { %>
-        <h2>Register a new catalog</h2>
-
-        <form action="/create" onsubmit="cadastrado()" method="post">
-          <label for="marca">Name:</label>
-          <input required type="text" id="marca" name="marca" />
-
-          <label for="modelo">Description:</label>
-          <input required type="text" name="modelo" id="modelo" />
-
-          <label for="tipo">Type:</label>
-          <input required type="text" name="tipo" id="tipo" />
-
-          <label for="imagem">Image Link:</label>
-          <input required type="text" name="imagem" id="imagem" />
-
-          <button id="btnCadastrar" type="submit">Register</button>
-        </form>
-
-        <% }else { %>
-
-        <h2>Pokemon update</h2>
-
-        <form action="/update/<%= catalog.id %>" method="POST">
-          <label for="marca">Name:</label>
-          <input
-            required
-            type="text"
-            id="marca"
-            name="marca"
-            value="<%= catalog.marca%>"
-          />
-
-          <label for="modelo">Description:</label>
-          <input
-            required
-            type="text"
-            name="modelo"
-            id="modelo"
-            value="<%= catalog.modelo%>"
-          />
-
-          <label for="tipo">Type:</label>
-          <input
-            required
-            type="text"
-            name="tipo"
-            id="tipo"
-            value="<%= catalog.tipo%>"
-          />
-
-          <label for="imagem">Image Link:</label>
-          <input
-            required
-            type="text"
-            name="imagem"
-            id="imagem"
-            value="<%= catalog.imagem%>"
-          />
-
-          <button id="btnAtualizar" type="submit">Update</button>
-        </form>
-        <% } %>
-      </section>
-
+     <% if(message!= "") { %>
+      <%- include('./components/alerts') %>
+<% } %>
       <section id="cards">
-        <h3>List of Pokemons</h3>
+        <h3>List of Bikes</h3>
 
         <% catalog.forEach((catalog) => { %>
         <div class="card">
-          <img src="<%= catalog.imagem %>" alt="" />
+          <img src="<%= catalog.img %>" alt="" />
           <h2><%= catalog.marca %></h2>
           <p class="modelo"><%= catalog.modelo %></p>
           <p>Type: <%= catalog.tipo %></p>
-          <a href="/detalhes/<%= catalog.id %>">Edit</a>
+          <a href="/getById/<%= catalog.id %>/put">Edit</a>
+          <a href="/getById/<%= catalog.id %>/delete">Delete</a>
         </div>
         <% }) %>
       </section>
     </main>
-    <footer>
-      <p>
-        <a href="https://github.com/magura13" target="_blank">My GitHub</a>
-        - Copyright Sign &copy;
-      </p>
-    </footer>
+
+
+    <% if (bikePut != null) { %>
+      <%- include('./components/modalUpdate') %>
+    <% } %>
+
+    <% if (bikeDel != null) { %>
+      <%- include('./components/modalDelete') %>
+    <% } %>
+  
+    <%- include('./components/footer') %>
+
     <script src="/js/script.js"></script>
   </body>
 </html>
